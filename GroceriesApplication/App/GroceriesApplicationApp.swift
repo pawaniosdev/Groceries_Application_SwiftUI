@@ -26,6 +26,10 @@ struct GroceriesApplicationApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
+            NavigationStack {
+                WelcomeScreen()
+//                SignInView()
+            }
         }
         .modelContainer(sharedModelContainer)
     }

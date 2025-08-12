@@ -39,6 +39,7 @@ struct SignInView: View {
             }
             .padding()
             Spacer()
+                .navigationBarHidden(true)
         }
         .ignoresSafeArea()
     }

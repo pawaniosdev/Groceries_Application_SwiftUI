@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeScreen: View {
+    @State private var moveToSignInView: Bool = false
     var body: some View {
         ZStack {
             Image("welcom_bg")
@@ -33,7 +34,7 @@ struct WelcomeScreen: View {
                     .foregroundStyle(.font2)
                 
                 Button {
-                    
+                    moveToSignInView.toggle()
                 } label: {
                     Text(" Get Started ")
                         .font(.title)
@@ -51,6 +52,9 @@ struct WelcomeScreen: View {
             
             
         }.ignoresSafeArea()
+            .navigationDestination(isPresented: $moveToSignInView) {
+                SignInView()
+            }
             
     }
 }
