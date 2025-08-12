@@ -15,7 +15,7 @@ struct SignInView: View {
                 .resizable()
                 .frame(height: 374.15)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 30) {
                 VStack(alignment: .leading) {
                     Text("Get your groceries")
                     Text("with necter")
@@ -32,21 +32,14 @@ struct SignInView: View {
                         .font(.subheadline)
                     Spacer()
                 }
-//
+                googleloginButton
+                fbLoginButton
+                    .padding(.top, -10)
                 
-                
-                loginButton
-                   
             }
             .padding()
-           
-            
-            
             Spacer()
-            
-            
         }
-       
         .ignoresSafeArea()
     }
     
@@ -61,30 +54,52 @@ struct SignInView: View {
         }
     }
     
-    var loginButton: some View {
-        
-        
+    var googleloginButton: some View {
         Button {
             
         } label: {
             HStack {
                 Image("google_logo")
                     .resizable()
-                    .frame(width: 30, height: 30, alignment: .center)
+                    .frame(width: 20, height: 20
+                           , alignment: .center)
                 Text("Continue with Google")
                     .foregroundStyle(.white)
                 
             }
-            .frame(height: 60)
+            .frame(height: 57)
             .frame(maxWidth: .infinity)
             .background {
                 RoundedRectangle(cornerRadius: 10)
+                    .foregroundStyle(.googleButton)
+            }
+        }
+    }
+    
+    var fbLoginButton: some View {
+        Button {
+            
+        } label: {
+            HStack {
+                Image("fb_logo")
+                    .resizable()
+                    .frame(width: 11, height: 24, alignment: .center)
+                Text("Continue with Facebook")
+                    .foregroundStyle(.white)
+                
+            }
+            .frame(height: 57)
+            .frame(maxWidth: .infinity)
+            .background {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundStyle(.fbButton)
             }
             
             
         }
-
     }
+    
+    
     
 }
 
