@@ -22,7 +22,7 @@ struct SignInView: View {
                 }.font(.title)
                     .fontWeight(.semibold)
                 
-                countrySelector
+                CountrySelector(phoneNumber: $phoneNumber)
                 Divider()
                 
                 HStack {
@@ -44,16 +44,7 @@ struct SignInView: View {
         .ignoresSafeArea()
     }
     
-    var countrySelector: some View {
-        HStack{
-            Image("flag")
-                .resizable()
-                .frame(width: 30, height: 30)
-            TextField(text: $phoneNumber, label: {
-                
-            })
-        }
-    }
+    
     
     var googleloginButton: some View {
         Button {
